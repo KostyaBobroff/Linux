@@ -1,0 +1,15 @@
+dmolchanov:~ dmolchanov$ ssh -tA -L 20122:127.1:2222 c7-ssh1 ssh -tA -L 2222:192.168.0.2:22 192.168.1.2 "ssh -t 192.168.0.2"
+Last login: Sun Oct  1 22:40:33 2017 from 192.168.0.1
+[root@c7-ssh3 ~]# w
+ 22:41:06 up 8 min,  1 user,  load average: 0,00, 0,05, 0,05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    192.168.0.1      22:41    2.00s  0.02s  0.01s w
+[root@c7-ssh3 ~]#
+=-=-=- в соседней вкладке -=-=-=
+dmolchanov:~ dmolchanov$ ssh 127.1 -p20122 -lroot
+Last login: Sun Oct  1 22:41:04 2017 from 192.168.0.1
+[root@c7-ssh3 ~]# w
+ 22:44:19 up 11 min,  2 users,  load average: 0,00, 0,03, 0,05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    192.168.0.1      22:41    3:15   0.01s  0.01s -bash
+root     pts/1    192.168.0.1      22:41    3.00s  0.02s  0.01s w
